@@ -1,0 +1,61 @@
+global proc shelf_MKF_Beta () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "SetChar" 
+        -enableBackground 0
+        -align "center" 
+        -label "if cmds.headsUpDisplay('HUDChar', ex=True):\n\tcmds.headsUpDisplay..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "if cmds.headsUpDisplay('HUDChar', ex=True):\n\tcmds.headsUpDisplay('HUDChar', rem=True)\n\nHUDChar = cmds.headsUpDisplay('HUDChar', section=2, block=0, blockSize='large', \n\tlabel='Personaje: ', labelFontSize = 'small', \n\tcommand=setChar, event='SelectionChanged')\n\ndef setChar():\n\n\tcurrentChar = cmds.ls(sl=True)\n\tif len(currentChar) > 0 and len(currentChar) < 2:\n\t\tif (cmds.listAttr(currentChar[0], st='MKFtag')) != None:\n\t\t\tchar = cmds.getAttr(currentChar[0] + '.MKFtag').split('#')[1]\n\t\t\treturn char" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\n\nlista = []\n\nfor x in cmds.ls(sl=True):\n        if x.find('CABEZA') != -1:\n            try:\n                lista.append(x + '.vtx[882]')\n                #lista.append(x + '.vtx[165]')\n            except:\n                pass\ncmds.select(lista)" 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.cmds as cmds\n\nlista = []\n\nfor x in cmds.ls(sl=True):..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "SelVtx" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nlista = []\n\nfor x in cmds.ls(et='mesh'):\n    \n        if x.find('MANO') != -1:\n            try:\n                lista.append(x + '.vtx[882]')\n                lista.append(x + '.vtx[165]')\n            except:\n                pass\ncmds.select(lista)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

@@ -1,0 +1,89 @@
+global proc shelf_MKF_rig () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Autorig Tool" 
+        -enableBackground 0
+        -align "center" 
+        -label "import MKF_Autorig.Autorig_v05_23102017.RIGG_SETUP_05\nreload(MKF..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "aRig" 
+        -overlayLabelColor 1 1 1 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import Rigging.MKF_Autorig.Autorig_v05_23102017.RIGG_SETUP_05\nreload(Rigging.MKF_Autorig.Autorig_v05_23102017.RIGG_SETUP_05)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Transfers UVs from a referenced mesh maintaining a clean input" 
+        -enableBackground 0
+        -align "center" 
+        -label "import Rigging.CleanUVs_Transfer.MKF_cleanUVsTransfer\nreload(Rig..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "UVs" 
+        -overlayLabelColor 1 1 1 
+        -overlayLabelBackColor 1 1 1 0 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import Rigging.CleanUVs_Transfer.MKF_cleanUVsTransfer\nreload(Rigging.CleanUVs_Transfer.MKF_cleanUVsTransfer)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\n\nfor x in cmds.ls(et='orientConstraint'..." 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.cmds as cmds\n\nfor x in cmds.ls(et='orientConstraint'..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "cFix" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nfor x in cmds.ls(et='orientConstraint', l=True):\n\tcmds.setAttr(x + '.interpType', 2)\n\nfor x in cmds.ls(et='parentConstraint', l=True):\n\tcmds.setAttr(x + '.interpType', 2)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

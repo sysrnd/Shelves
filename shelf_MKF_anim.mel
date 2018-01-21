@@ -1,0 +1,116 @@
+global proc shelf_MKF_anim () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import MKF_playblastExport.playblastExport_app\nreload(MKF_playblastExport.playblastExport_app)" 
+        -enableBackground 0
+        -align "center" 
+        -label "import MKF_playblastExport.playblastExport_app\nreload(MKF_playbl..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "blast" 
+        -overlayLabelColor 1 1 1 
+        -overlayLabelBackColor 0 0 0 0.4 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import Animacion.Maya_Animacion_PlayblastExporter.playblastExport_app\nreload(Animacion.Maya_Animacion_PlayblastExporter.playblastExport_app)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import mkfAnimCopy\nreload(mkfAnimCopy)" 
+        -enableBackground 0
+        -align "center" 
+        -label "import mkfAnimCopy\nreload(mkfAnimCopy)" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "cpAni" 
+        -overlayLabelColor 1 1 1 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import Animacion.Maya_animation_copyAnimation.mkfAnimCopy\nreload(Animacion.Maya_animation_copyAnimation.mkfAnimCopy)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "assigns random Mat" 
+        -enableBackground 0
+        -align "center" 
+        -label "import randomMats\nreload(randomMats)" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Mats" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import Animacion.Maya_animation_randomMats.randomMats\nreload(Animacion.Maya_animation_randomMats.randomMats)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "imports all reference files" 
+        -enableBackground 0
+        -align "center" 
+        -label "import alembicExport\nreload(alembicExport)" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "abc" 
+        -overlayLabelColor 1 1 1 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import Animacion.Maya_Animation_alembicExporter.alembicExport_app\nreload(Animacion.Maya_Animation_alembicExporter.alembicExport_app)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

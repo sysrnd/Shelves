@@ -1,0 +1,89 @@
+global proc shelf_MKF_Lighting () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 41
+        -height 41
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import mkf_ReconnectShaders\nreload (mkf_ReconnectShaders)" 
+        -enableBackground 0
+        -align "center" 
+        -label "import mkf_ReconnectShaders\nreload (mkf_ReconnectShaders)" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "shaders" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "Z:/RnD/Pipeline/Maya/Icons/MKF_lighting/Reconnect_Connect_38x38.png" 
+        -image1 "Z:/RnD/Pipeline/Maya/Icons/MKF_lighting/Reconnect_Connect_38x38.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import Lighting.ReconnectShaders_qt.app_reconnectShaders\nreload(Lighting.ReconnectShaders_qt.app_reconnectShaders)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\n\ncant = 0\n\nstringss = [\"//MASTER/master/\",\"//master/MASTER/\" , \"//Master/master/\", \"//master/master/\"]\nfor element in cmds.ls(type = \"file\"):\n    newName = cmds.getAttr(element+\".fileTextureName\")\n    for strg in stringss:\n        if newName.find(strg) is not -1:\n            newName = newName.replace(strg, \"Z:/\")\n            cant +=1\n    cmds.setAttr(element+\".fileTextureName\", newName, type = \"string\")\nprint \"Se cambiaron \" + str(cant) + \" texturas\",\n    \n" 
+        -enableBackground 0
+        -align "center" 
+        -label "import maya.cmds as cmds\n\ncant = 0\n\nstringss = [\"//MASTER/master..." 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Z:/" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\ncant = 0\n\nstringss = [\"//MASTER/master/\",\"//master/MASTER/\" , \"//Master/master/\", \"//master/master/\"]\nfor element in cmds.ls(type = \"file\"):\n    newName = cmds.getAttr(element+\".fileTextureName\")\n    for strg in stringss:\n        if newName.find(strg) is not -1:\n            newName = newName.replace(strg, \"Z:/\")\n            cant +=1\n    cmds.setAttr(element+\".fileTextureName\", newName, type = \"string\")\nprint \"Se cambiaron \" + str(cant) + \" texturas\",\n    \n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "renUI" 
+        -enableBackground 0
+        -align "center" 
+        -label "import renUI\nreload (renUI)" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "REN" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "Z:/RnD/Pipeline/Maya/Scripts/RenUI/Icons/shelfRenUi.png" 
+        -image1 "Z:/RnD/Pipeline/Maya/Scripts/RenUI/Icons/shelfRenUi.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import RenUI.renUI\nreload (RenUI.renUI)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 
