@@ -26,7 +26,7 @@ global proc shelf_MKF_rig () {
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "import Rigging.MKF_Autorig.Autorig_v05_23102017.RIGG_SETUP_05\nreload(Rigging.MKF_Autorig.Autorig_v05_23102017.RIGG_SETUP_05)" 
+        -command "import Rigging.Maya_rigging_biped_Autorig.RIGG_SETUP_05\nreload(Rigging.Maya_rigging_biped_Autorig.RIGG_SETUP_05)" 
         -sourceType "python" 
         -commandRepeatable 1
         -flat 1
